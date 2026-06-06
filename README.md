@@ -47,6 +47,17 @@ Then invoke with `/unifying-projects` / `/cleaning-up-projects`, or just describ
 
 Both skills were authored with **test-driven development for documentation** (the [superpowers `writing-skills`](https://github.com/obra/superpowers) method): write pressure scenarios, watch subagents fail *without* the skill (RED), write the skill to close those exact failures (GREEN), then run adversarial agents to hunt rationalization loopholes and patch them (REFACTOR). Each skill went through a baseline round, a green/verify round, and multiple adversarial hardening rounds — the rationalization tables and red-flag lists are the captured output of agents trying to wriggle around the rules.
 
+## Releasing
+
+1. Add a `## X.Y.Z` section to [`CHANGELOG.md`](./CHANGELOG.md); commit & push it.
+2. Run the release command — it bumps the version in both manifests, validates (`claude plugin validate`), commits, pushes, and cuts the GitHub release (notes taken from that CHANGELOG section):
+
+```bash
+./scripts/release.sh X.Y.Z
+```
+
+It refuses to run on a dirty/out-of-sync tree, an existing tag, or a missing CHANGELOG section — so a release always has a matching tag, bumped manifests, and notes.
+
 ## License
 
 MIT — see [LICENSE](./LICENSE).
