@@ -1,5 +1,10 @@
 # codebase-hygiene-skills
 
+[![Release](https://img.shields.io/github/v/release/Dudude-bit/codebase-hygiene-skills?label=release&color=da7756)](https://github.com/Dudude-bit/codebase-hygiene-skills/releases)
+[![License: MIT](https://img.shields.io/github/license/Dudude-bit/codebase-hygiene-skills?color=blue)](./LICENSE)
+[![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-da7756)](https://code.claude.com/docs/en/plugins)
+[![Skills](https://img.shields.io/badge/skills-2-success)](#)
+
 Two sibling [Agent Skills](https://agentskills.io) for keeping a codebase healthy — one **unifies**, one **removes**. Both are *judgment* skills: the dangerous part of refactoring isn't finding candidates (tools do that), it's deciding what to touch without coupling the wrong things or shipping a silent breakage.
 
 | Skill | What it does | Core judgment |
