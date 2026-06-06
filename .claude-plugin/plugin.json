@@ -1,0 +1,13 @@
+{
+  "name": "codebase-hygiene",
+  "displayName": "Codebase Hygiene",
+  "version": "1.0.0",
+  "description": "Two judgment skills for codebase health: unifying-projects (consolidate duplication by same-reason judgment) and cleaning-up-projects (remove cruft only when provably dead). Both follow survey -> classify -> plan -> approval -> apply -> verify.",
+  "author": {
+    "name": "Dudude-bit"
+  },
+  "homepage": "https://github.com/Dudude-bit/codebase-hygiene-skills",
+  "repository": "https://github.com/Dudude-bit/codebase-hygiene-skills",
+  "license": "MIT",
+  "keywords": ["refactoring", "cleanup", "codebase", "unification", "agent-skills"]
+}

@@ -4,24 +4,39 @@ Two sibling [Agent Skills](https://agentskills.io) for keeping a codebase health
 
 | Skill | What it does | Core judgment |
 |-------|--------------|---------------|
-| [`unifying-projects`](./unifying-projects) | Analyze a project and consolidate duplication / reuse | **"Do these change for the same reason?"** — identical code from different domains stays separate. *Duplication is cheaper than the wrong abstraction.* |
-| [`cleaning-up-projects`](./cleaning-up-projects) | Audit a whole project for accumulated cruft and remove it | **"Is it provably dead?"** — absence of a reference is not proof of death (dynamic dispatch, public API, docs, config, cross-boundary). |
+| [`unifying-projects`](./skills/unifying-projects) | Analyze a project and consolidate duplication / reuse | **"Do these change for the same reason?"** — identical code from different domains stays separate. *Duplication is cheaper than the wrong abstraction.* |
+| [`cleaning-up-projects`](./skills/cleaning-up-projects) | Audit a whole project for accumulated cruft and remove it | **"Is it provably dead?"** — absence of a reference is not proof of death (dynamic dispatch, public API, docs, config, cross-boundary). |
 
 Both follow the same spine: **survey the real files → classify → prioritized plan → user approval → apply (behavior-preserving) → verify by execution.** They cross-reference each other; `cleaning-up-projects` removes, `unifying-projects` merges.
 
 ## Install
 
-**Claude Code** — copy the skill folders into your skills directory:
+### Claude Code plugin (recommended)
+
+This repo is also a Claude Code plugin marketplace. Add it once, install the plugin:
+
+```text
+/plugin marketplace add Dudude-bit/codebase-hygiene-skills
+/plugin install codebase-hygiene@codebase-hygiene-skills
+```
+
+The skills then load automatically by their `description` triggers, or invoke them explicitly (namespaced by the plugin):
+
+```text
+/codebase-hygiene:unifying-projects
+/codebase-hygiene:cleaning-up-projects
+```
+
+### Manual (any skill-aware agent)
+
+Each skill is a self-contained folder (`SKILL.md` + a report template) following the [agentskills.io](https://agentskills.io/specification) spec, so it also works standalone (Codex, Gemini CLI, etc.):
 
 ```bash
 git clone https://github.com/Dudude-bit/codebase-hygiene-skills.git
-cp -r codebase-hygiene-skills/unifying-projects ~/.claude/skills/
-cp -r codebase-hygiene-skills/cleaning-up-projects ~/.claude/skills/
+cp -r codebase-hygiene-skills/skills/* ~/.claude/skills/
 ```
 
-Then invoke with `/unifying-projects` or `/cleaning-up-projects`, or just describe the task ("приведи проект к переиспользованию", "почисти мёртвый код") — the skill is picked up by its `description` triggers.
-
-Each skill is a self-contained folder (`SKILL.md` + a report template) and follows the [agentskills.io](https://agentskills.io/specification) spec, so it also works with other skill-aware agents (Codex, Gemini CLI, etc.).
+Then invoke with `/unifying-projects` / `/cleaning-up-projects`, or just describe the task ("приведи проект к переиспользованию", "почисти мёртвый код").
 
 ## How they were built
 

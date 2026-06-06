@@ -1,0 +1,23 @@
+{
+  "name": "codebase-hygiene-skills",
+  "description": "Skills for unifying and cleaning up codebases",
+  "owner": {
+    "name": "Dudude-bit",
+    "url": "https://github.com/Dudude-bit"
+  },
+  "plugins": [
+    {
+      "name": "codebase-hygiene",
+      "source": "./",
+      "description": "Two judgment skills: unifying-projects (consolidate duplication) and cleaning-up-projects (remove dead code safely)",
+      "version": "1.0.0",
+      "author": {
+        "name": "Dudude-bit"
+      },
+      "homepage": "https://github.com/Dudude-bit/codebase-hygiene-skills",
+      "repository": "https://github.com/Dudude-bit/codebase-hygiene-skills",
+      "license": "MIT",
+      "keywords": ["refactoring", "cleanup", "codebase", "unification", "agent-skills"]
+    }
+  ]
+}
